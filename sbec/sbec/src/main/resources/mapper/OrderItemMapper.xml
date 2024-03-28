@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.persistence.dao.SpringbootJeremyOrderItemDao">
+    <resultMap id="BaseResultMap" type="spring.persistence.vo.SpringbootJeremyOrderItem">
+        <id column="ORDER_ITEM_ID" jdbcType="DECIMAL" property="orderItemId" />
+        <result column="ORDER_ID" jdbcType="DECIMAL" property="orderId" />
+        <result column="PRODUCT_ID" jdbcType="DECIMAL" property="productId" />
+        <result column="QUANTITY" jdbcType="DECIMAL" property="quantity" />
+        <result column="AMOUNT" jdbcType="DECIMAL" property="amount" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, AMOUNT
+    </sql>
+    <select id="getOrderItemsByOrderId" resultMap="BaseResultMap">
+        SELECT oi.order_item_id, oi.order_id, oi.product_id, oi.quantity, oi.amount, p.product_name,
+        p.image_url FROM springboot_jeremy_order_item oi
+        LEFT JOIN springboot_jeremy_product  p
+        ON (oi.product_id = p.product_id)
+        WHERE oi.order_id = #{orderId}
+    </select>
+
+
+
+</mapper>
