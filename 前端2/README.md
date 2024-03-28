@@ -1,5 +1,5 @@
-# hm7-vue
-
+# For interview -vue
+# 內有一些個人練習和一個前後端分離的網站 資料庫設定的帳號為111@111 密碼為111 若要註冊也可以透過API TESTER 輸入JSON 註冊
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
