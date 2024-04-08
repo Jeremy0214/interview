@@ -5,3 +5,6 @@
 
 
 #若有需新增帳號 ，可以再另行到api tester 實行controller內的register來進行註冊
+
+
+#mp資料夾為一個用java swing 並用thread實作的一個專案
